@@ -1,6 +1,9 @@
 window.addEventListener("DOMContentLoaded", (event) => {
   
   const resultElement = document.getElementById('result');
+  const requestElement = document.getElementById('request');
+
+  
   // generate words ops
   const generateBtn = document.getElementById('generateBtn');
   var wordsArr = [];
@@ -15,6 +18,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
         wordsArr.push(pickFromArr(targarr));
     }
     console.log(wordsArr);
+    resultElement.innerText = wordsArr.join("\n");
   };
   generateBtn.addEventListener('click', createArrRnd(nouns, 10));
 
