@@ -19,6 +19,9 @@
     }
     console.log(wordsArr);
     resultElement.innerText = wordsArr.join("\n");
+    setTimeout(function(){
+      resultElement.innerText = "";
+    }, 60000);
   };
 
   // speech recognition ops
@@ -61,10 +64,11 @@
       }
   
       resultElement.innerText = result;
-  
-      if (result.toLowerCase().includes('stop recording')) {
-        resultElement.innerText = result.replace(/stop recording/gi, '');
-        stopRecording();
+      // if result in the array then add counter
+      if (wordsArr.includes(result.toLowerCase()) {
+        resultElement.innerText = resultElement.innerText + result + "\n";
+        wordsArr.splice(indexOf(result.toLowerCase()), 1);
+        console.log(wordsArr);
       }
     };
   
