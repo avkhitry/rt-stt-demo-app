@@ -4,7 +4,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
   // generate words ops
   const generateBtn = document.getElementById('generateBtn');
   var wordsArr = [];
-  generateBtn.addEventListener('click', createArrRnd);
+  generateBtn.addEventListener('click', createArrRnd(nouns, 10));
 
   // speech recognition ops
   const startBtn = document.getElementById('startBtn');
@@ -19,7 +19,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
     return targarr[(Math.floor(Math.random() * nouns.length))];
   };
   
-  function createArrRnd(targarr, reqnum){
+  function createArrRnd(targarr = nouns, reqnum = 10){
     let wordsArr = [];
     for (let i = 1; i <= reqnum; i++) {
         wordsArr.push(pickFromArr(targarr));
