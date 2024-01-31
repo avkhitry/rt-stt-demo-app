@@ -1,4 +1,4 @@
-window.addEventListener("DOMContentLoaded", (event) => {
+
   
   const resultElement = document.getElementById('result');
   const requestElement = document.getElementById('request');
@@ -20,15 +20,18 @@ window.addEventListener("DOMContentLoaded", (event) => {
     console.log(wordsArr);
     resultElement.innerText = wordsArr.join("\n");
   };
-  generateBtn.addEventListener('click', createArrRnd(nouns, 10));
 
   // speech recognition ops
   const startBtn = document.getElementById('startBtn');
   // const animatedSvg = startBtn.querySelector('svg');
   const stopBtn = document.getElementById('stopBtn');
+
+// add all listeners after DOM loaded
+window.addEventListener("DOMContentLoaded", (event) => {
+  generateBtn.addEventListener('click', createArrRnd(nouns, 10));
   startBtn.addEventListener('click', startRecording);
   stopBtn.addEventListener('click', stopRecording);
-
+});
 
   // recognition cycle
   let recognition = window.SpeechRecognition || window.webkitSpeechRecognition;
@@ -91,4 +94,4 @@ window.addEventListener("DOMContentLoaded", (event) => {
       recognition.stop();
     }
   }
-});
+
