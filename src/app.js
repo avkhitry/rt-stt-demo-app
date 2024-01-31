@@ -27,11 +27,9 @@
   const stopBtn = document.getElementById('stopBtn');
 
 // add all listeners after DOM loaded
-window.addEventListener("DOMContentLoaded", (event) => {
   generateBtn.addEventListener('click', createArrRnd(nouns, 10));
   startBtn.addEventListener('click', startRecording);
   stopBtn.addEventListener('click', stopRecording);
-});
 
   // recognition cycle
   let recognition = window.SpeechRecognition || window.webkitSpeechRecognition;
