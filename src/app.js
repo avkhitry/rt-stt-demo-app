@@ -62,10 +62,12 @@
           result += event.results[i][0].transcript;
         }
       }
-  
+      
+      result = result.replace(/\.$/, "").toLowerCase()
       resultElement.innerText = result;
+      
       // if result in the array then add counter
-      if (wordsArr.includes(result.toLowerCase())) {
+      if (wordsArr.includes(result)) {
         resultElement.innerText = resultElement.innerText + result + "\n";
         wordsArr.splice(indexOf(result.toLowerCase()), 1);
         console.log(wordsArr);
