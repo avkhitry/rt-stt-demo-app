@@ -1,10 +1,15 @@
 window.addEventListener("DOMContentLoaded", (event) => {
   
   const resultElement = document.getElementById('result');
+  // generate words ops
+  const generateBtn = document.getElementById('generateBtn');
+  var wordsArr = [];
+  generateBtn.addEventListener('click', createArrRnd);
+
+  // speech recognition ops
   const startBtn = document.getElementById('startBtn');
   // const animatedSvg = startBtn.querySelector('svg');
   const stopBtn = document.getElementById('stopBtn');
-  
   startBtn.addEventListener('click', startRecording);
   stopBtn.addEventListener('click', stopRecording);
 
@@ -15,11 +20,11 @@ window.addEventListener("DOMContentLoaded", (event) => {
   };
   
   function createArrRnd(targarr, reqnum){
-    let newArr = [];
+    let wordsArr = [];
     for (let i = 1; i <= reqnum; i++) {
-        newArr.push(pickFromArr(targarr));
+        wordsArr.push(pickFromArr(targarr));
     }
-    return newArr;
+    console.log(wordsArr);
   };
 
   // recognition cycle
