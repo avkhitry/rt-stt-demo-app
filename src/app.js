@@ -27,7 +27,9 @@
   const stopBtn = document.getElementById('stopBtn');
 
 // add all listeners after DOM loaded
-  generateBtn.addEventListener('click', createArrRnd(nouns, 10));
+  generateBtn.addEventListener('click', function() {
+    createArrRnd(nouns, 10);
+  });
   startBtn.addEventListener('click', startRecording);
   stopBtn.addEventListener('click', stopRecording);
 
