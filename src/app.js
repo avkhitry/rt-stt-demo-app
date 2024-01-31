@@ -1,6 +1,6 @@
 const resultElement = document.getElementById('result');
 const startBtn = document.getElementById('startBtn');
-const animatedSvg = startBtn.querySelector('svg');
+// const animatedSvg = startBtn.querySelector('svg');
 const stopBtn = document.getElementById('stopBtn');
 
 startBtn.addEventListener('click', startRecording);
@@ -17,7 +17,7 @@ if (recognition) {
   recognition.onstart = () => {
     startBtn.disabled = true;
     stopBtn.disabled = false;
-    animatedSvg.classList.remove('hidden');
+    // animatedSvg.classList.remove('hidden');
     console.log('Recording started');
   };
 
@@ -49,7 +49,7 @@ if (recognition) {
   recognition.onend = function () {
     startBtn.disabled = false;
     stopBtn.disabled = true;
-    animatedSvg.classList.add('hidden');
+    // animatedSvg.classList.add('hidden');
     console.log('Speech recognition ended');
   };
 } else {
