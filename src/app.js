@@ -62,9 +62,11 @@
           result += event.results[i][0].transcript;
         }
       }
+      console.log(result);
       
       result = result.replace(/\.$/, "").toLowerCase()
       resultElement.innerText = result;
+      console.log(result);
       
       // if result in the array then add counter
       if (wordsArr.includes(result)) {
