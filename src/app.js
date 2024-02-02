@@ -62,12 +62,14 @@
           result += event.results[i][0].transcript;
         }
       }
-      console.log(result);
+      // console.log(result);
       
       result = result.replace(/\./g, "").toLowerCase().trim();
       resultElement.innerText = result;
       console.log(result);
-      
+      console.log(wordsArr);
+      console.log(wordsArr.includes(result));
+
       // if result in the array then add counter
       if (wordsArr.includes(result)) {
         requestElement.innerText = resultElement.innerText + result + "\n";
