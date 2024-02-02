@@ -18,9 +18,9 @@
         wordsArr.push(pickFromArr(targarr));
     }
     console.log(wordsArr);
-    resultElement.innerText = wordsArr.join("\n");
+    requestElement.innerText = wordsArr.join("\n");
     setTimeout(function(){
-      resultElement.innerText = "";
+      requestElement.innerText = "";
     }, 60000);
   };
 
@@ -41,8 +41,8 @@
   
   if (recognition) {
     recognition = new recognition();
-    recognition.continuous = false;
-    recognition.interimResults = false;
+    recognition.continuous = true;
+    recognition.interimResults = true;
     recognition.lang = 'en-US';
   
     recognition.onstart = () => {
@@ -64,13 +64,13 @@
       }
       console.log(result);
       
-      result = result.replace(/\.$/, "").toLowerCase()
+      result = result.replace(/\./g, "").toLowerCase().trim();
       resultElement.innerText = result;
       console.log(result);
       
       // if result in the array then add counter
       if (wordsArr.includes(result)) {
-        resultElement.innerText = resultElement.innerText + result + "\n";
+        requestElement.innerText = resultElement.innerText + result + "\n";
         wordsArr.splice(indexOf(result.toLowerCase()), 1);
         console.log(wordsArr);
       }
