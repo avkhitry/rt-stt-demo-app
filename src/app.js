@@ -75,6 +75,10 @@
         requestElement.innerText = requestElement.innerText + result + "\n";
         wordsArr.splice(wordsArr.indexOf(result), 1);
         console.log(wordsArr);
+        if (wordsArr.length === 0) { 
+          resultElement.innerText = "You won!"
+          stopRecording();
+        }
       }
     };
   
