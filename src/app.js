@@ -72,8 +72,8 @@
 
       // if result in the array then add counter
       if (wordsArr.includes(result)) {
-        requestElement.innerText = resultElement.innerText + result + "\n";
-        wordsArr.splice(indexOf(result.toLowerCase()), 1);
+        requestElement.innerText = requestElement.innerText + result + "\n";
+        wordsArr.splice(wordsArr.indexOf(result), 1);
         console.log(wordsArr);
       }
     };
