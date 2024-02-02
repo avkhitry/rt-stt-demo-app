@@ -13,7 +13,7 @@
   };
   
   function createArrRnd(targarr = nouns, reqnum = 10){
-    let wordsArr = [];
+    wordsArr = [];
     for (let i = 1; i <= reqnum; i++) {
         wordsArr.push(pickFromArr(targarr));
     }
