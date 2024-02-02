@@ -41,8 +41,8 @@
   
   if (recognition) {
     recognition = new recognition();
-    recognition.continuous = true;
-    recognition.interimResults = true;
+    recognition.continuous = false;
+    recognition.interimResults = false;
     recognition.lang = 'en-US';
   
     recognition.onstart = () => {
