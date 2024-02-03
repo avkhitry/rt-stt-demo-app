@@ -7,18 +7,37 @@
   // generate words ops
   const generateBtn = document.getElementById('generateBtn');
   var wordsArr = [];
-  const nouns = [
-  "cat", "moon", "tree", "book", "car", "sun", "fish", "bird", "house", "star",
-  "rock", "river", "mountain", "dog", "ship", "ocean", "flower", "rain", "snow", "fire",
-  "cloud", "sky", "forest", "road", "bridge", "hill", "light", "night", "day", "moonlight",
-  "sunshine", "grass", "wind", "storm", "thunder", "lightning", "beach", "sand", "wave", "island",
-  "lake", "pond", "stream", "waterfall", "glacier", "desert", "canyon", "valley", "peak", "volcano",
-  "jungle", "marsh", "swamp", "bay", "sea", "oasis", "reef", "cliff", "plateau", "fjord",
-  "field", "meadow", "prairie", "dune", "lagoon", "delta", "peninsula", "isthmus", "archipelago",
-  "cave", "gulf", "strait", "channel", "fountain", "well", "spring", "mine", "quarry", "forest",
-  "grove", "orchard", "garden", "vineyard", "farm", "ranch", "estate", "castle", "palace", "fort",
-  "temple", "church", "mosque", "shrine", "sanctuary", "monastery", "library", "museum", "school", "university"
-];
+  const nouns = ["air", "aircraft", "airport", "alligator", "ambulance", "ankle", "antlers", "apartment", "apple", "apron", "architect", "armchair",
+"arrow", "aunt", "baby", "back", "bag", "bakery", "ball", "balloon", "bank", "bat", "beans", "bear", "bed", "belt", "bermudas",
+"bikini", "bill", "bird", "bitterness", "black", "blazer", "blender", "blouse", "board", "boat", "bones", "book", "bookcase",
+"bookstore", "boots", "bow", "boxers", "boy", "bra", "brain", "brass", "bread", "bridge", "brother", "bucket", "buckles", "buffalo",
+"bulb", "bus stop", "butter", "cabin", "cabinet", "cafe", "candy", "cane", "canoe", "cap", "car", "cardigan", "carpet", "cashier",
+"casino", "castle", "cat", "cave", "cello", "chair", "chaise longue", "charlie (U.K)", "cheeks", "cheese", "chest", "chicken",
+"children", "chocolate", "choker", "church", "cinema", "clock", "coffee", "composer", "computer", "conditioner", "cooker",
+"cookware", "costume", "couch", "country", "cow", "cravat", "credenza", "crest", "crib", "crow", "daughter", "deer", "dentist",
+"designer", "desk", "desktop", "detective", "doctor", "dog", "dolphin", "donkey", "dress", "dresser", "drum", "earrings", "ears",
+"egg", "elephant", "estate", "eyes", "factory", "fan", "farm", "father", "film", "finger", "fish", "flag", "flower", "foot",
+"forest", "fork", "fox", "freezer", "frock", "frog", "fruit", "galaxy", "garage", "garlic", "gas station", "gauva", "gift",
+"ginger", "giraffe", "girl", "glasses", "gloves", "goat", "governor", "gown", "grains", "grandfather", "grandmother", "grapes",
+"guest", "guitar", "hair", "hamburger", "hammer", "hand", "hat", "head", "heart", "heels", "hen", "herbs", "horn", "horse",
+"hospital", "host", "hostel", "hotel", "house", "jacket", "jaw", "jersey", "jewelry", "judge", "juicer", "jumper", "kangaroo",
+"keyboard", "kid", "knife", "koala", "lamb", "lamp", "laptop", "lawyer", "leg", "leggings", "lemon", "library", "lighter", "lion",
+"lips", "london", "luggage", "lung", "mall", "man", "mango", "market", "medicine", "microscope", "milk", "mirror", "mobile",
+"model", "monkey", "moonlight", "mother", "mouse", "mouth", "museum", "music", "musician", "neck", "necklace", "newspaper", "noise",
+"noodles", "nose", "notebook", "nurse", "ocean", "oil", "onion", "orange", "ostrich", "oven", "owl", "pad", "pagoda", "painter",
+"palm", "pancake", "panda", "panther", "pants", "paper", "parfume", "park", "parrot", "pasta", "peacock", "pen", "pencil", "petrol
+station", "pharmacist", "pharmacy", "phone", "photographer", "physician", "piano", "pig", "pigeon", "pipe", "plane", "plant",
+"police", "police station", "popcorn", "potato", "pouch", "professor", "pumpkin", "purse", "pyramid", "rabbit", "radio", "rainbow",
+"razor", "refrigerator", "remote", "restaurant", "ribs", "rice", "ring", "road", "salt", "sand", "sandals", "sandwich", "sari",
+"saxophone", "scale", "school", "scissors", "senator", "shampoo", "shark", "sheep", "ship", "shirt", "shoes", "shorts", "shoulder",
+"shower", "shrimp", "singer", "sink", "sister", "skirt", "sky", "skyscraper", "slippers", "smile", "smoke", "snowman", "soap",
+"socks", "sofa", "son", "soup", "spaghetti", "sparrow", "spoon", "stadium", "stairs", "star", "stomach", "stove", "strawberry",
+"street", "suit", "suitcase", "sun", "sunglasses", "supermarket", "surgeon", "swan", "sweater", "swimming pool", "table", "tablet",
+"tail", "taxi", "tea", "teacher", "teen", "telephone", "television", "temple", "theater", "tie", "tiger", "tissue", "toes",
+"tomato", "tongue", "toothbrush", "toothpaste", "town", "toy", "train", "train station", "tree", "trench coat", "trousers", "truck",
+"tunnel", "turkey", "turtle", "umbrella", "uncle", "underwear", "vase", "vehicle", "vest", "veterinarian", "villa", "village",
+"violin", "voice", "waist", "waiter", "wallet", "washing machine", "watch", "water", "water melon", "whale", "wheelchair",
+"whisker", "wings", "wolf", "woman", "wound", "wrist", "xylophone", "zebra", "zoo"];
   // function pickFromArr(targarr) {
   //   return targarr[(Math.floor(Math.random() * nouns.length))];
   // };
