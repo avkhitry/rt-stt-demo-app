@@ -118,7 +118,7 @@ button > svg {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
-.result:empty {
+.request:empty {
   display: none;
 }
 
