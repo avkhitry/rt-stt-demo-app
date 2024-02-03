@@ -14,15 +14,22 @@
   "sunshine", "grass", "wind", "storm", "thunder", "lightning", "beach", "sand", "wave", "island",
   "lake", "pond", "stream", "waterfall", "glacier", "desert", "canyon", "valley", "peak", "volcano",
   "jungle", "marsh", "swamp", "bay", "sea", "oasis", "reef", "cliff", "plateau", "fjord",
-  "field", "meadow", "prairie", "dune", "ridge", "lagoon", "delta", "peninsula", "isthmus", "archipelago",
+  "field", "meadow", "prairie", "dune", "lagoon", "delta", "peninsula", "isthmus", "archipelago",
   "cave", "gulf", "strait", "channel", "fountain", "well", "spring", "mine", "quarry", "forest",
   "grove", "orchard", "garden", "vineyard", "farm", "ranch", "estate", "castle", "palace", "fort",
   "temple", "church", "mosque", "shrine", "sanctuary", "monastery", "library", "museum", "school", "university"
 ];
-  function pickFromArr(targarr) {
-    return targarr[(Math.floor(Math.random() * nouns.length))];
-  };
-  
+  // function pickFromArr(targarr) {
+  //   return targarr[(Math.floor(Math.random() * nouns.length))];
+  // };
+  function pickFromArr(targarr = nouns, numwords = 10) {
+    num = Math.floor(Math.random() * targarr.length - numwords);
+    name = targarr.splice(num,1);
+    targarr.push(name);
+    return name;
+}
+
+
   function createArrRnd(targarr = nouns, reqnum = 10){
     wordsArr = [];
     for (let i = 1; i <= reqnum; i++) {
