@@ -103,19 +103,20 @@
     for (let i = event.resultIndex; i < event.results.length; i++) {
       if (event.results[i].isFinal) {
         result += event.results[i][0].transcript + ' ';
-        if (event.results[i][1].transcript) {
+        console.log(event.results[i]);
+        if (event.results[i][1]) {
           result += '\n' + event.results[i][1].transcript + ' ';
         }
-        if (event.results[i][2].transcript) {
+        if (event.results[i][2]) {
           result += '\n' + event.results[i][2].transcript + ' ';
         }
     
       } else {
         result += event.results[i][0].transcript;
-        if (event.results[i][1].transcript) {
+        if (event.results[i][1]) {
           result += '\n' + event.results[i][1].transcript + ' ';
         }
-        if (event.results[i][2].transcript) {
+        if (event.results[i][2]) {
           result += '\n' + event.results[i][2].transcript + ' ';
         }
       }
