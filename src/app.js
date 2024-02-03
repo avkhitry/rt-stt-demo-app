@@ -88,7 +88,7 @@
     recognition.continuous = true;
     recognition.interimResults = true;
     recognition.lang = 'en-US';
-    recognition.maxAlternatives = 1;
+    recognition.maxAlternatives = 3;
 
     recognition.onstart = () => {
       startBtn.disabled = true;
@@ -100,13 +100,26 @@
     recognition.onresult = function (event) {
       let result = '';
   
-      for (let i = event.resultIndex; i < event.results.length; i++) {
-        if (event.results[i].isFinal) {
-          result += event.results[i][0].transcript + ' ';
-        } else {
-          result += event.results[i][0].transcript;
+    for (let i = event.resultIndex; i < event.results.length; i++) {
+      if (event.results[i].isFinal) {
+        result += event.results[i][0].transcript + ' ';
+        if (event.results[i][1].transcript) {
+          result += '\n' + event.results[i][1].transcript + ' ';
+        }
+        if (event.results[i][2].transcript) {
+          result += '\n' + event.results[i][2].transcript + ' ';
+        }
+    
+      } else {
+        result += event.results[i][0].transcript;
+        if (event.results[i][1].transcript) {
+          result += '\n' + event.results[i][1].transcript + ' ';
+        }
+        if (event.results[i][2].transcript) {
+          result += '\n' + event.results[i][2].transcript + ' ';
         }
       }
+    }
       // console.log(result);
       
       result = result.replace(/\./g, "").toLowerCase().trim();
