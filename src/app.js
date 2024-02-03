@@ -21,7 +21,7 @@
     requestElement.innerText = wordsArr.join("\n");
     setTimeout(function(){
       requestElement.innerText = "";
-    }, 5000);
+    }, 30000);
   };
 
   // speech recognition ops
