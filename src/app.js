@@ -49,12 +49,13 @@
 
   // recognition cycle
   let recognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-  
+  let speechgramlist = window.SpeechGrammarList || window.webkitSpeechGrammarList;
+
   if (recognition) {
     recognition = new recognition();
 
     // trying to limit dictionary for recognition
-    const speechRecognitionList = new SpeechGrammarList();
+    speechRecognitionList = new speechgramlist();
     speechRecognitionList.addFromString(nouns, 1);
     recognition.grammars = speechRecognitionList;
     
