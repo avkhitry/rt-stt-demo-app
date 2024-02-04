@@ -58,7 +58,7 @@
     requestElement.innerText = wordsArr.join("\n");
     setTimeout(function(){
       requestElement.innerText = "";
-    }, 30000);
+    }, 45000);
   };
 
   // speech recognition ops
