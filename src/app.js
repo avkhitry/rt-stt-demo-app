@@ -38,6 +38,9 @@
 "tunnel", "turkey", "turtle", "umbrella", "uncle", "underwear", "vase", "vehicle", "vest", "veterinarian", "villa", "village",
 "violin", "voice", "waist", "waiter", "wallet", "watch", "water", "watermelon", "whale", "wheelchair",
 "whisker", "wings", "wolf", "woman", "wound", "wrist", "xylophone", "zebra", "zoo"];
+
+const colors = ["red", "orange", "yellow", "green", "blue", "purple", "pink", "brown", "gray", "black", "white"];
+
   // function pickFromArr(targarr) {
   //   return targarr[(Math.floor(Math.random() * nouns.length))];
   // };
@@ -45,7 +48,9 @@
     num = Math.floor(Math.random() * targarr.length - numwords);
     name = targarr.splice(num,1);
     targarr.push(name);
-    return name;
+
+    colname = colors[(Math.floor(Math.random() * colors.length))] + ' ' + name;
+    return colname;
 }
 
 
@@ -58,7 +63,7 @@
     requestElement.innerText = wordsArr.join("\n");
     setTimeout(function(){
       requestElement.innerText = "";
-    }, 45000);
+    }, 60000);
   };
 
   // speech recognition ops
@@ -143,7 +148,8 @@
 
       // if result in the array then add counter
       let results = result.split(' ');
-      results.map( result => checkIncluding(wordsArr, result) );
+      checkIncluding(wordsArr, result);
+      // results.map( result => checkIncluding(wordsArr, result) );
       
     };
   
