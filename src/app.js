@@ -80,15 +80,15 @@ const colors = ["red", "orange", "yellow", "green", "blue", "purple", "pink", "b
 
   // recognition cycle
   let recognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-  let speechgramlist = window.SpeechGrammarList || window.webkitSpeechGrammarList;
+  // let speechgramlist = window.SpeechGrammarList || window.webkitSpeechGrammarList;
 
   if (recognition) {
     recognition = new recognition();
 
     // trying to limit dictionary for recognition
-    speechRecognitionList = new speechgramlist();
-    speechRecognitionList.addFromString(nouns, 1);
-    recognition.grammars = speechRecognitionList;
+    // speechRecognitionList = new speechgramlist();
+    // speechRecognitionList.addFromString(nouns, 1);
+    // recognition.grammars = speechRecognitionList;
     
     recognition.continuous = true;
     recognition.interimResults = true;
